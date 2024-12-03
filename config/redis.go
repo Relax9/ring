@@ -6,7 +6,7 @@ import (
 	"ring/global"
 )
 
-func init() {
+func InitRedis() {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
 		Password: "", // no password set
