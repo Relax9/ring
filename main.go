@@ -4,14 +4,14 @@ import (
 	"context"
 	"github.com/gin-gonic/gin"
 	"ring/api/system"
-	"ring/config"
 	"ring/global"
+	store2 "ring/global/store"
 )
 
 func main() {
 
-	config.InitMySQL()
-	config.InitRedis()
+	store2.InitMySQL()
+	store2.InitRedis()
 	engine := gin.New()
 	engine.Use(gin.Recovery())
 

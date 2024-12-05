@@ -1,4 +1,4 @@
-package config
+package store
 
 import (
 	"context"
@@ -9,8 +9,8 @@ import (
 func InitRedis() {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
-		Password: "", // no password set
-		DB:       0,  // use default DB
+		Password: "123456", // no password set
+		DB:       0,        // use default DB
 	})
 	_, err := rdb.Ping(context.Background()).Result()
 	if err != nil {
